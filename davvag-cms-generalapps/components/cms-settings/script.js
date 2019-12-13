@@ -32,11 +32,11 @@ WEBDOCK.component().register(function(exports){
             //else promiseObj = handler.transformers.insertArtical (bindData.product);
             handler.services.Settings({name:"cms-global"})
             .then(function(result){
-                //if(result.result){
+                if(result.result){
                     bindData.product=result.result;
                     console.log("body");
                     console.log(bindData.product);
-                //}
+                }
                 //gotoUom();
             })
             .error(function(){
