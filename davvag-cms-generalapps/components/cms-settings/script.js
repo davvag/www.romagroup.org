@@ -62,8 +62,8 @@ WEBDOCK.component().register(function(exports){
     var validator;
     function loadValidator(){
         validator = validatorInstance.newValidator (scope);
-        validator.map ("product.Name",true, "You should enter a name");
-        validator.map ("product.url",true, "You should enter a url");
+        //validator.map ("product.Name",true, "You should enter a name");
+        //validator.map ("product.url",true, "You should enter a url");
     }
 
     function submit(){
