@@ -7,7 +7,7 @@ WEBDOCK.component().register(function(exports){
         Products:[],
         sidebar:[],
         titlepage:{name:"",title:"",caption:""},
-        id:0,allloaded:false,loading:false
+        id:0,allloaded:false,loading:false,cards:[]
     };
     var vueData =  {
         methods:{
@@ -112,7 +112,7 @@ WEBDOCK.component().register(function(exports){
                 //
                 //query.push({storename:"d_cms_cat_v1",search:"parentButtonid:0"});
                 if(bindData.sidebar.length==0){
-                    query.push({storename:"d_cms_cat_v1",search:"parentButtonid:0"});
+                    query.push({storename:"d_cms_cat_v1",search:"parentButtonid:0"},{storename:"d_cms_cards_v1",search:"parentButtonid:0"});
                 }
                 query.push({storename:"d_cms_artical_v1_pod_paging",parameters:{page:page.toString(),size:size.toString(),boost:"Y"}});
 
@@ -120,7 +120,7 @@ WEBDOCK.component().register(function(exports){
                 //query.push({storename:"d_cms_artical_v1",search:"catid:"+routeData.pid});
                 //query.push({storename:"d_cms_cat_v1",search:"parentButtonid:"+routeData.pid});
                 if(bindData.sidebar.length==0){
-                    query.push({storename:"d_cms_cat_v1",search:"parentButtonid:"+routeData.pid});
+                    query.push({storename:"d_cms_cat_v1",search:"parentButtonid:"+routeData.pid},{storename:"d_cms_cards_v1",search:"parentButtonid:"+routeData.pid});
                 }
                 query.push({storename:"d_cms_artical_v1_pod_bycat_paging",parameters:{page:page.toString(),size:size.toString(),catid:routeData.pid.toString()}});
 
@@ -143,6 +143,9 @@ WEBDOCK.component().register(function(exports){
                                         articals=r.result.d_cms_artical_v1_pod_bycat_paging;
                                     }
                                 //}
+                                if(r.result.d_cms_cards_v1!=null){
+                                    bindData.cards=r.result.d_cms_cards_v1;
+                                }
                                 if(r.result.d_cms_cat_v1!=null){
                                     bindData.sidebar=r.result.d_cms_cat_v1;
                                 }
