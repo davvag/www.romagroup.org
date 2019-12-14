@@ -2,7 +2,7 @@
     "name" : "cms-gapp-handler",
     "description":"Vue.JS Plugin for Soss Router",
     "author":"Lasitha Senanayake",
-    "version" : "0.1",
+    "version" : "0.2",
     "gitUrl" : "",
     "resources": {
         "files":[
@@ -54,7 +54,7 @@
             "destUrl" : "http://localhost:9000/data/d_cms_buttons_v1?query=BType:@catid"
         },"getButtonbyid": {
             "method": "GET",
-            "route": "/allBType/@catid",
+            "route": "/getButtonbyid/@catid",
             "destMethod": "GET",
             "destUrl" : "http://localhost:9000/data/d_cms_buttons_v1?query=id:@catid"
         },
@@ -73,25 +73,25 @@
             "bodyTemplate" : "{\"object\":@@body@@}"
         },"allCards": {
             "method": "GET",
-            "route": "/allButtons",
+            "route": "/allCards",
             "destMethod": "GET",
             "destUrl" : "http://localhost:9000/data/d_cms_cards_v1"
         },"getCardbyid": {
             "method": "GET",
-            "route": "/allBType/@catid",
+            "route": "/getCardbyid/@catid",
             "destMethod": "GET",
             "destUrl" : "http://localhost:9000/data/d_cms_cards_v1?query=id:@catid"
         },
         "insertCards": {
             "method": "POST",
-            "route": "/insertBtn",
+            "route": "/insertCards",
             "destMethod": "POST",
             "destUrl" : "http://localhost:9000/data/d_cms_cards_v1",
             "bodyTemplate" : "{\"object\":@@body@@}"
         },
         "updateCards": {
             "method": "POST",
-            "route": "/updateBtn",
+            "route": "/updateCards",
             "destMethod": "PUT",
             "destUrl" : "http://localhost:9000/data/d_cms_cards_v1",
             "bodyTemplate" : "{\"object\":@@body@@}"
