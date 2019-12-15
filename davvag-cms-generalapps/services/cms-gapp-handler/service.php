@@ -72,7 +72,7 @@ class ArticalService{
             if(!isset($result)){
                 //echo "in here";
                 $result = SOSSData::Query("d_cms_artical_v1",urlencode("id:".$_GET["q"]));
-                return $result;
+                //return $result;
                 if($result->success){
                     //$f->{$s->storename}=$result->result;
                     if(isset($result->result[0])){
