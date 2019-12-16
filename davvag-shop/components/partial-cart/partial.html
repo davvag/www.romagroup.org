@@ -33,35 +33,41 @@
                 </thead>
                 <tbody>
                     <tr v-for="item in items">
-                        <td class="col-sm-8 col-md-6">
-                            <div class="media checkoutItem">
-                                <h4 class="media-heading">{{ item.name }}</h4>
-                                
-                                <div class="thumbnail" style="margin-right:20px;"> <img class="media-object" :src="'components/dock/soss-uploader/service/get/products/'+item.itemid+'-'+item.imgurl" alt="" style="width: 72px; height: 72px;"> </div>
-                                <table>
-                                    <tr style="height:34px;">
-                                        <td style="width:40%">In Stock</td>
-                                        <td style="width:40%">{{ item.isOrder ? 'No' : 'Yes' }}</td>
-                                        <td style="width:20%"></td>
-                                    </tr>
-                                    <tr style="height:34px;">
-                                        <td>Unit Price</td>
-                                        <td>Rs.{{ item.price }}</td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Qty</td>
-                                        <td style="padding-right:10px">
-                                            <input type="email" class="form-control" id="exampleInputEmail1" v-model="item.qty">
-                                        </td>
-                                        <td>
-                                            <button type="button" class="btn btn-danger" v-on:click="removeItem(item)">
-                                                <span class="glyphicon glyphicon-remove"></span>
-                                            </button>
-                                        </td>
-                                    </tr>
-                                </table>
-                            </div>
+                            
+                        <td class="col-sm-8 col-md-3">
+                                <div class="col-md-3">
+                                        <div class="card gedf-card">
+                                            <div class="card-body">
+                                                <h5 class="card-title" v-html="item.name">Card title</h5>
+                                                <div class="thumbnail" style="margin-right:20px;"> <img class="media-object" :src="'components/dock/soss-uploader/service/get/products/'+item.itemid+'-'+item.imgurl" alt="" style="width: 72px; height: 72px;"> </div>
+                                                <table class="card-text">
+                                                        <tr style="height:34px;">
+                                                            <td style="width:40%">In Stock</td>
+                                                            <td style="width:40%">{{ item.isOrder ? 'No' : 'Yes' }}</td>
+                                                            <td style="width:20%"></td>
+                                                        </tr>
+                                                        <tr style="height:34px;">
+                                                            <td>Unit Price</td>
+                                                            <td>Rs.{{ item.price }}</td>
+                                                            <td></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Qty</td>
+                                                            <td style="padding-right:10px">
+                                                                <input type="email" class="form-control" id="exampleInputEmail1" v-model="item.qty">
+                                                            </td>
+                                                            <td>
+                                                                <button type="button" class="btn btn-danger" v-on:click="removeItem(item)">
+                                                                    <span class="fa fa-remove"></span>
+                                                                </button>
+                                                            </td>
+                                                        </tr>
+                                                    </table>
+                                            </div>
+                                        </div>
+                                   
+                                    </div>
+                            
                         </td>
                         <td style="vertical-align:middle; text-align:center;">
                             <div>

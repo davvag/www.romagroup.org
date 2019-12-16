@@ -28,7 +28,7 @@
     "description":{
         "title": "product_marketplace",
         "author":"Davvag",
-        "version":"0.3",
+        "version":"0.4",
         "icon":"appicon.png"
     },
     "tags":["showindock"],
