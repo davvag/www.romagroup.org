@@ -9,12 +9,12 @@
 }
 .navbar-nav.mobile-bar > li > a > span.menu-icon {
 	display: block;
-	
+	font-size: 1.5rem;
 }
 
 .navbar-nav.mobile-bar > li > a > span {
 	color: var(--backcolor);
-	font: small;
+	
 }
 .navbar-nav.mobile-bar {
 	list-style: none;
@@ -32,7 +32,7 @@
 	-webkit-align-items: stretch;
 	align-items: stretch;
 	margin: 0px 0px;
-	font: small;
+	
 }
 
 @media only screen and (max-width: 600px) {

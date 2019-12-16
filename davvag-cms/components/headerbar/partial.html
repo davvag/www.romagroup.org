@@ -26,8 +26,9 @@
   <ul class="nav navbar-nav navbar-right mobile-bar">
   <li v-for="menu in MobileMenu">
     <a  :href="menu.url" target="_self">
-        <span :class="'menu-icon '+menu.other">  </span> 
-        {{ menu.Caption }}
+        <span :class="'menu-icon '+menu.other"></span> 
+        
+        <sup style="font-size:x-small;"> {{ menu.Caption }}</sup>
     </a>
   </li>
   </ul>
