@@ -84,6 +84,21 @@
             "annotations":{
                 "maxLen": 200
             }
-        }          
+        },
+        {
+            "fieldName":"qty",
+            "dataType":"int"
+        },
+        {
+            "fieldName":"tid",
+            "dataType":"int"
+        },
+        {
+            "fieldName":"collectedBy",
+            "dataType":"java.lang.String",
+            "annotations":{
+                "maxLen": 200
+            }
+        }           
     ]
 }

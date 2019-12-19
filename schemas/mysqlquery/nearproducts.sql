@@ -27,9 +27,13 @@ SET var_lan2 =param_lng+(1/111*param_radius);
 SET var_lat1 =param_lat-(1/111*param_radius);
 SET var_lat2 =param_lat+(1/111*param_radius);
 IF param_lat<>0 THEN
-    SELECT * FROM ((products INNER JOIN storeproductmapping ON products.itemid=storeproductmapping.productid) INNER JOIN store ON store.id = storeproductmapping.Storeid) where store.latitude between var_lat1 and var_lat2 and store.longitude between var_lan1 and var_lan2 AND products.catogory=param_catid;
+    SELECT * FROM ((product_published INNER JOIN storeproductmapping ON products.itemid=storeproductmapping.productid) INNER JOIN store ON store.id = storeproductmapping.Storeid) where store.latitude between var_lat1 and var_lat2 and store.longitude between var_lan1 and var_lan2 AND products.catogory=param_catid;
 ELSE
-    SELECT * From products Limit param_page, param_size;
+	if q<>"" then
+		SELECT *,  MATCH(name, caption,keywords) AGAINST(q) AS score From products where MATCH(name, caption,keywords) AGAINST(q) Limit param_page, param_size;
+	else
+		SELECT * From products Limit param_page, param_size;
+	end if;
 END IF;
 
 
